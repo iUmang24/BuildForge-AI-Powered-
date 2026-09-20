@@ -1,0 +1,4 @@
+﻿backend/database/dump/
+backend/.env
+frontend/.env
+node_modules/
