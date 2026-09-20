@@ -18,7 +18,7 @@ BuildForge lets students apply for a structured internship program, work through
 | Backend | Node.js, Express.js |
 | Database | MySQL |
 | Auth | JWT (access/refresh), role-based access control (RBAC) |
-| Other | Razorpay (payments), Nodemailer (email), PDFKit (certificates), Puppeteer (PDF rendering) |
+
 
 ## Key Features
 
