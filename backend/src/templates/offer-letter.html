@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8" />
+ 
+ <style>
+ @page {
+   size: A4;
+   margin: 40px;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: Georgia, serif;
+   color: #000;
+   line-height: 1.7;
+ }
+ 
+ .logo-left {
+   position: absolute;
+   top: 30px;
+   left: 40px;
+ }
+ 
+ .logo-right {
+   position: absolute;
+   top: 30px;
+   right: 40px;
+ }
+ 
+ .logo-left img {
+   height: 60px;
+ }
+ 
+ .logo-right img {
+   height: 45px;
+ }
+ 
+ .container {
+   margin-top: 120px;
+ }
+ 
+ .header {
+   text-align: center;
+   margin-bottom: 40px;
+ }
+ 
+ .company-name {
+   font-size: 26px;
+   font-weight: bold;
+ }
+ 
+ .letter-title {
+   font-size: 20px;
+   margin-top: 8px;
+   text-decoration: underline;
+ }
+ 
+ .date {
+   margin-top: 20px;
+   font-size: 14px;
+ }
+ 
+ .signature-section {
+   margin-top: 70px;
+   position: relative;
+   width: 300px;
+ }
+ 
+ .signature-image {
+   height: 70px;
+ }
+ 
+ .sign-line {
+   border-bottom: 1px solid #000;
+   margin: 8px 0;
+   width: 230px;
+ }
+ 
+ .sign-name {
+   font-weight: bold;
+ }
+ 
+ .seal {
+   position: absolute;
+   top: -10px;
+   left: 160px;
+ }
+ 
+ .seal img {
+   height: 90px;
+   opacity: 0.9;
+ }
+ 
+ .footer {
+   margin-top: 80px;
+   font-size: 13px;
+   color: #444;
+ }
+ </style>
+ </head>
+ 
+ <body>
+ 
+ <div class="logo-left">
+   <img src="{{productLogo}}" />
+ </div>
+ 
+ <div class="logo-right">
+   <img src="{{parentLogo}}" />
+ </div>
+ 
+ <div class="container">
+ 
+   <div class="header">
+     <div class="company-name">{{productName}}</div>
+     <div class="letter-title">Offer Letter – Project Evaluation Internship Program</div>
+   </div>
+ 
+   <div class="date">
+     Date: {{date}}
+   </div>
+ 
+   <p>
+     Dear <strong>{{studentName}}</strong>,
+   </p>
+ 
+   <p>
+     We are pleased to inform you that you have been accepted for the
+<strong>Project Evaluation Internship Certification Program</strong>.
+   </p>
+ 
+   <p>
+     Your submitted project titled <strong>{{program}}</strong> will be
+evaluated as part of our academic internship assessment process.
+   </p>
+ 
+   <p>
+     Upon successful review and completion of the evaluation process,
+you will be awarded an official Internship Certificate recognizing
+your work and practical experience.
+   </p>
+ 
+ 
+   <div class="signature-section">
+ 
+     <img class="signature-image" src="{{signatureImage}}" />
+ 
+     <div class="sign-line"></div>
+ 
+     <div class="sign-name">{{signatoryName}}</div>
+     <div>{{designation}}</div>
+ 
+     <div class="seal">
+       <img src="{{companySeal}}" />
+     </div>
+ 
+   </div>
+ 
+   <div class="footer">
+     This is a system-generated offer letter and does not require a physical signature.
+   </div>
+ 
+ </div>
+ 
+ </body>
+ </html>
+
+ 
+  
+   

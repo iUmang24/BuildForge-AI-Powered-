@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      padding: 40px;
+      color: #000;
+    }
+
+    /* HEADER */
+    .invoice-header {
+      width: 100%;
+      display: table;
+      table-layout: fixed;
+      margin-bottom: 20px;
+    }
+
+    .logo-left,
+    .logo-right {
+      display: table-cell;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    .logo-left {
+      text-align: left;
+    }
+
+    .logo-right {
+      text-align: right;
+    }
+
+    /* Equal visual size */
+    .logo-left img,
+    .logo-right img {
+
+      max-width: 180px;
+      display: inline-block;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 15px 0 10px 0;
+    }
+
+    .company-details {
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .bill-to {
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 6px;
+    }
+
+    th {
+      background: #f0f0f0;
+      text-align: center;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .footer-left {
+      width: 50%;
+    }
+
+    .footer-right {
+      width: 50%;
+      text-align: right;
+    }
+
+    .seal {
+      margin-top: 20px;
+      height: 60px;
+    }
+
+    .company-name {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .company-address {
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    .company-gstin {
+      font-size: 12px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP LOGOS -->
+  <div class="invoice-header">
+    <div class="logo-left">
+      <!-- <img src="{{productLogo}}" alt="BuildForge Logo" /> -->
+      <img src="{{productLogo}}" alt="BuildForge Logo" />
+    </div>
+    <div class="logo-right">
+      <!-- <img src="{{parentLogo}}" alt="Parent Company Logo" /> -->
+      <img src="{{parentLogo}}" alt="Parent Company Logo" />
+    </div>
+  </div>
+
+  <h2>GST Invoice</h2>
+
+  <!-- COMPANY DETAILS -->
+  <div class="company-details">
+
+    <!-- Product Branding -->
+    <div style="font-size:20px; font-weight:bold; letter-spacing:0.5px;">
+      {{productName}}
+    </div>
+
+    <!-- Legal Company -->
+    <div style="font-size:12px; margin-top:4px;">
+      A product of <strong>{{companyName}}</strong>
+    </div>
+
+    <div class="company-address" style="margin-top:6px;">
+      {{registeredAddress}}
+    </div>
+
+    <div class="company-gstin">
+      GSTIN: {{gstin}}
+    </div>
+
+  </div>
+
+  <!-- META -->
+  <div class="meta">
+    <div><strong>Invoice No:</strong> {{invoiceNo}}</div>
+    <div><strong>Date:</strong> {{date}}</div>
+  </div>
+
+  <!-- BILL TO -->
+  <div class="bill-to">
+    <strong>Bill To:</strong><br />
+    {{name}}<br />
+    {{email}}<br />
+  </div>
+
+  <!-- TABLE -->
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>HSN/SAC</th>
+        <th>Quantity</th>
+        <th>Rate</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>{{plan}}</td>
+        <td>{{hsn}}</td>
+        <td>1</td>
+        <td class="right">{{originalAmount}}</td>
+        <td class="right">{{originalAmount}}</td>
+      </tr>
+
+      {{discountRow}}
+
+      <tr>
+        <td colspan="4" class="right">Subtotal (Taxable Value)</td>
+        <td class="right">{{subtotal}}</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" class="right">CGST (9%)</td>
+        <td class="right">{{cgst}}</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" class="right">SGST (9%)</td>
+        <td class="right">{{sgst}}</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" class="right">
+          <strong>Total Invoice Value (Including Taxes)</strong>
+        </td>
+        <td class="right"><strong>{{total}}</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="footer">
+
+    <!-- LEFT SIDE -->
+    <div class="footer-left">
+      <strong>Terms of Payment:</strong> Online
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="footer-right">
+
+      {{directorsBlock}}
+
+      <div style="margin-top:20px; text-align:right;">
+        <img src="{{companySeal}}" class="seal" />
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: "Times New Roman", serif;
+    }
+
+    /* MAIN WRAPPER WITH BACKGROUND */
+    .certificate-wrapper {
+      width: 1123px;
+      height: 794px;
+      position: relative;
+      background: url("{{backgroundImage}}") no-repeat center center;
+      background-size: cover;
+    }
+
+    /* ================== CONTENT SHIFTED UP ================== */
+
+    .content-area {
+      position: absolute;
+      top: 100px;
+      /* Shifted upward */
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 0 100px 0px 91px;
+      box-sizing: border-box;
+    }
+
+    /* TITLE */
+    .title {
+      font-size: 52px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin-top: 5px;
+      letter-spacing: 3px;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .presented-text {
+      margin-top: 35px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    /* NAME */
+    .student-name {
+      font-family: "Great Vibes", cursive;
+      font-size: 42px;
+      margin: 25px 0 15px 0;
+    }
+
+    .name-underline {
+      width: 55%;
+      margin: 0 auto 25px auto;
+      border-bottom: 1.5px solid #000;
+    }
+
+    /* DESCRIPTION */
+    .description {
+      width: 80%;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .program {
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 8px;
+    }
+
+    /* ================== BOTTOM SECTION ================== */
+
+    /* ISSUE DATE - Lower */
+    .issue-date {
+      position: absolute;
+      bottom: 130px;
+      /* shifted lower */
+      left: 200px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .issue-line {
+      width: 200px;
+      border-bottom: 1px solid #000;
+      margin: 8px auto;
+    }
+
+    /* SIGNATURE - Lower */
+    .signature-block {
+      position: absolute;
+      bottom: 115px;
+      /* shifted lower */
+      right: 200px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .signature-block img {
+      height: 50px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .sig-line {
+      width: 230px;
+      border-bottom: 1px solid #000;
+      margin: 8px auto;
+    }
+
+    /* CERTIFICATE ID - Lower */
+    .certificate-id {
+      position: absolute;
+      bottom: 66px;
+      /* moved lower */
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    /* QR BLOCK - Bottom Left */
+    .qr-section {
+      position: absolute;
+      bottom: 65px;
+      left: 48px;
+      text-align: center;
+    }
+
+    .qr-section img {
+      height: 100px;
+    }
+
+    .qr-text {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* TOP LOGOS */
+    .logo-left {
+      position: absolute;
+      top: 71px;
+      /* moved higher */
+      left: 36px;
+    }
+
+    .logo-right {
+      position: absolute;
+      top: 71px;
+      /* moved higher */
+      right: 35px;
+    }
+
+    .logo-left img {
+      height: 65px;
+      width: auto;
+      max-width: 220px;
+    }
+
+    .logo-right img {
+      height: 65px;
+      /* smaller for wide text logo */
+      width: auto;
+      max-width: 320px;
+    }
+
+    .logo-left,
+    .logo-right {
+      z-index: 2;
+    }
+
+    .content-area {
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="certificate-wrapper">
+
+    <!-- TOP LEFT LOGO -->
+    <div class="logo-left">
+      <img src="{{leftLogo}}" />
+    </div>
+
+    <!-- TOP RIGHT LOGO -->
+    <div class="logo-right">
+      <img src="{{rightLogo}}" />
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-area">
+
+      <div class="title">CERTIFICATE</div>
+      <div class="subtitle">OF TRAINING</div>
+
+      <div class="presented-text">
+        THIS CERTIFICATE IS PRESENTED TO
+      </div>
+
+      <div class="student-name">
+        {{studentName}}
+      </div>
+
+      <div class="name-underline"></div>
+
+      <div class="description">
+        for successfully completing Project Internship & Training Program
+        from <strong>{{startDate}}</strong> to
+        <strong>{{endDate}}</strong> in the Domain of
+        <div class="program">{{program}}</div>
+
+        <div style="margin-top:10px;">
+          This program is designed to develop foundational and advanced skills
+          in front-end and back-end development, including responsive design,
+          API integration, server-side scripting, and database management.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ISSUE DATE -->
+    <div class="issue-date">
+      {{issueDate}}
+      <div class="issue-line"></div>
+      Issued on
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature-block">
+      <img src="{{signatureImage}}" />
+      <div class="sig-line"></div>
+      <strong>{{signatoryName}}</strong><br />
+      {{designation}}
+    </div>
+
+    <!-- CERTIFICATE ID -->
+    <div class="certificate-id">
+      Certificate ID: {{certificateId}}
+    </div>
+
+    <!-- QR SECTION -->
+    <div class="qr-section">
+      <img src="{{qrCode}}" />
+      <div class="qr-text">Scan QR to Verify</div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
